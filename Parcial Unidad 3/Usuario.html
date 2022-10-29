@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table usuario</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/bootstrap.js"></script>
+
+</head>
+<h1>DotOffice</h1>
+<body onload="listar();">
+    
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsupported"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsupportedcontent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="index.html"> <i class="fa fa-home" aria-hidden="true"></i>
+                    Inicio</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <div class="container">
+        <br/>
+        <div class="mb-3">
+            <label for="name" class="form-label"><i class="fa fa-building-o" aria-hidden="true"></i>Categoria</label>
+            <select class="form-control" id="categoria" required>
+                <option selected="" disabled="">categorias</option>
+                <option value="Individual">Individual</option>
+                <option value="Corporativo">Corporativo</option>
+            </select>
+        </div>
+<div class="mb-3">
+    <label for="name" class="form-label"> <i class="fa fa-user-o" aria-hidden="true"></i>Nombres</label>
+    <input type="text" class="form-control" id="name" placeholder="Milton" required>
+</div>
+<div class="mb-3">
+    <label for="lastname" class="form-label"> <i class="fa fa-user-o" aria-hidden="true"></i>Apellidos</label>
+    <input type="text" class="form-control" id="lastname" placeholder="Galán" required>
+</div>
+<div class="mb-3">
+    <label for="email" class="form-label"> <i class="fa fa-envelope-o" aria-hidden="true"></i>Correo Electrónico</label>
+    <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+</div>
+<div class="mb-3">
+    <label for="Password" class="form-label"> <i class="fa fa-dot-circle-o" aria-hidden="true"></i>Contraseña</label>
+    <input type="password" class="form-control" id="password" placeholder="********" required>
+</div>
+<div class="mb-3">
+   <input class="form-check-input" type="checkbox" id="info" required>
+   <label class="form-check-label" for="info"><i class="fa fa-clone" aria-hidden="true"></i> Desea recibir ofertas e Información</label>
+</div>
+<div class="mb-3">
+    <input class="form-check-input" type="checkbox" id="terminos" required>
+    <label class="form-check-label" for="terminos"><i class="fa fa-clone" aria-hidden="true"></i> Acepto términos y servicios</label>
+ </div>
+ <button class="btn btn-primary mb-3" onclick="guardar_localStorage();listar();">Registrate</button>
+<br/>
+<br/>
+<div class="alert alert-primary" role="alert">
+    Listado de registros
+</div>
+<table class="table table-striped-table-hover"></table>
+<thead>
+    <tr>
+        <th scope="col"><i class="fa fa-building" aria-hidden="true"></i>categorias</th>
+        <th scope="col"><i class="fa fa-user" aria-hidden="true"></i>Nombres</th>
+        <th scope="col"><i class="fa fa-user" aria-hidden="true"></i>Apellidos</th>
+        <th scope="col"><i class="fa fa-envelope" aria-hidden="true"></i>Email</th>
+        <th scope="col"><i class="fa fa-lock" aria-hidden="true"></i>Password</th>
+        <th scope="col"><i class="fa fa-check-square" aria-hidden="true"></i>Información</th>
+        <th scope="col"><i class="fa fa-check-square" aria-hidden="true"></i>Términos</th>
+        <th scope="col"><i class="fa fa-check-trash" aria-hidden="true"></i>Eliminar</th>
+    </tr>
+</thead>
+<tbody id="listarclave">
+
+</tbody>
+
+    </div>
+    
+    
+</body>
+
+</div>
+<body>
+    
+</body>
+</html>
+<script>
+    function guardar_localStorage(){
+        var categoria = document.getElementById("categoria").value;
+        var categoria = document.getElementById("name").value;
+        var categoria = document.getElementById("lastname").value;
+        var categoria = document.getElementById("email").value;
+        var categoria = document.getElementById("password").value;
+        var categoria = document.getElementById("info").value;
+        var categoria = document.getElementById("terminos").value;
+
+        const registro_usuario = {
+            categoria:categoria,
+            name:name,
+            lastname:lastname,
+            email:email,
+            password:password,
+            info:info,
+            terminos:terminos,
+
+        };
+
+        if (
+            window.localStorage.getItem('r-'+ email) !== undefined &&
+            window.localStorage.getItem('r-'+ email)
+        ) {
+            swal.fire({
+                icon:"error",
+                title:"Usuario ya registrado",
+                showConfirmButton: false,
+                timer: 1500,
+            });
+
+             } else { 
+
+                if(name=="" || lastname=="" || email=="" || password== ""|| terminos != true){
+                    swal.fire({ 
+                        icon: "success",
+                        title:"Almacenado Correctamente",
+                        showConfirmButton: false,
+                        time
+                }
+            
+        }
+
+
+</script>
